@@ -60,3 +60,50 @@ export async function uploadDocument({ token, file, title, description, category
   if (!res.ok) throw new Error('Upload failed');
   return res.json();
 }
+
+// ADMIN: Fetch all users
+export async function fetchUsers(token) {
+  const res = await fetch(`${API_URL}/auth/users`, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  if (!res.ok) throw new Error('Failed to fetch users');
+  return res.json();
+}
+// ADMIN: Delete user
+export async function deleteUser(token, userId) {
+  const res = await fetch(`${API_URL}/auth/users/${userId}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  if (!res.ok) throw new Error('Failed to delete user');
+  return res.json();
+}
+// ADMIN: Delete document (already exists, but wrap for admin)
+export async function deleteDocument(token, docId) {
+  const res = await fetch(`${API_URL}/documents/${docId}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  if (!res.ok) throw new Error('Failed to delete document');
+  return res.json();
+}
+// ADMIN: Send announcement (dummy, as backend route may not exist)
+export async function sendAnnouncement(token, message) {
+  const res = await fetch('http://localhost:5000/api/announcements', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({ message })
+  });
+  if (!res.ok) throw new Error('Failed to send announcement');
+  return res.json();
+}
+export async function fetchAnnouncements(token) {
+  const res = await fetch('http://localhost:5000/api/announcements', {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  if (!res.ok) throw new Error('Failed to fetch announcements');
+  return res.json();
+}

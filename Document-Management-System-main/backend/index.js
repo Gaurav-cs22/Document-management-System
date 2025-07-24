@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import documentRoutes from './routes/documents.js';
 import recentsRoutes from './routes/recents.js';
+import announcementsRoutes from './routes/announcements.js';
 import { v2 as cloudinary } from 'cloudinary';
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/documents', documentRoutes);
 app.use('/api/recents', recentsRoutes);
+app.use('/api/announcements', announcementsRoutes);
 
 const PORT = process.env.PORT || 5000;
 

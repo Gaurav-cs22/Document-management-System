@@ -1,4 +1,6 @@
-i/*
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/*
   SecureDoc DMS Main Styles (normal CSS)
 */
 
@@ -962,4 +964,353 @@ tbody tr:hover {
   font-size: 1.08rem;
   letter-spacing: 0.5px;
   box-shadow: 0 -2px 12px 0 rgba(52,152,219,0.08);
+}
+
+/* Admin Panel Styles */
+.admin-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.admin-panel-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.admin-panel-stat-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  padding: 24px 32px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.admin-panel-stat-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(99,102,241,0.18);
+  transform: scale(1.04) translateY(-2px);
+}
+.admin-panel-stat-icon {
+  font-size: 2.2rem;
+  color: #6366f1;
+  margin-bottom: 8px;
+}
+.admin-panel-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #23272f;
+}
+.admin-panel-stat-label {
+  font-size: 1.1rem;
+  color: #6366f1;
+  margin-top: 4px;
+}
+.admin-panel-section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.admin-panel-activity-list {
+  list-style: none;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.admin-panel-activity-list li {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+.admin-panel-announce-modal .modal-content {
+  max-width: 400px;
+}
+.admin-panel-announce-modal textarea {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #cce0f6;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Modern Dashboard Glassmorphism & Shapes */
+.dashboard-bg {
+  background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.dashboard-shape {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+.dashboard-shape-1 {
+  top: -80px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 30% 30%, #6366f1 0%, #60a5fa 100%);
+  opacity: 0.13;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+.dashboard-shape-2 {
+  bottom: -100px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle at 70% 70%, #60a5fa 0%, #6366f1 100%);
+  opacity: 0.11;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+.glass-sidebar {
+  background: rgba(241,245,249,0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+  border-right: 1px solid #e5e7eb;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.dashboard-header {
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: blur(6px) !important;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px 0 rgba(99,102,241,0.06);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.logout-btn {
+  background: linear-gradient(90deg,#6366f1 60%,#60a5fa 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 22px !important;
+  font-weight: bold;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.10);
+  transition: background 0.2s,box-shadow 0.2s;
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg,#60a5fa 60%,#6366f1 100%) !important;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+}
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#6366f1 60%,#60a5fa 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.13);
+  letter-spacing: 1px;
+}
+/* Sidebar nav-link improvements */
+.nav-link {
+  border-radius: 0 22px 22px 0 !important;
+  font-size: 1.12rem !important;
+  padding: 14px 28px !important;
+  transition: background 0.25s, color 0.25s !important;
+}
+.nav-link.active, .nav-link:hover {
+  background: rgba(99,102,241,0.13) !important;
+  color: #6366f1 !important;
+}
+/* Main content card effect */
+.dashboard-main-content {
+  background: rgba(248,250,252,0.95) !important;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(99,102,241,0.07);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+/* Smooth transitions for dashboard */
+.dashboard-bg, .glass-sidebar, .dashboard-header, .dashboard-main-content {
+  transition: background 0.3s, box-shadow 0.3s;
+}
+/* Responsive improvements */
+@media (max-width: 900px) {
+  .glass-sidebar {
+    width: 60px !important;
+    min-width: 60px !important;
+    padding: 18px 0 !important;
+  }
+  .glass-sidebar h2, .glass-sidebar .nav-link span {
+    display: none !important;
+  }
+  .dashboard-header {
+    padding: 18px 12px 12px 12px !important;
+  }
+  .dashboard-main-content {
+    padding: 12px !important;
+  }
+}
+
+/* Auth glassmorphism card and button */
+.auth-glass-card {
+  background: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.10) !important;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.auth-btn {
+  background: linear-gradient(90deg,#6366f1 60%,#60a5fa 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-weight: bold;
+  font-size: 1.13rem;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.10);
+  transition: background 0.2s,box-shadow 0.2s;
+}
+.auth-btn:hover {
+  background: linear-gradient(90deg,#60a5fa 60%,#6366f1 100%) !important;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+}
+
+/* Attractive Share Popup Styles */
+.share-popup-menu {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+  min-width: 170px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+  z-index: 20;
+  padding: 10px 0 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: fadeInUp 0.25s cubic-bezier(.39,.575,.56,1) both;
+}
+.share-popup-arrow {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  width: 22px;
+  height: 12px;
+  overflow: hidden;
+}
+.share-popup-arrow::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.share-popup-item {
+  text-align: left;
+  padding: 12px 22px 12px 18px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, transform 0.13s;
+  margin: 0 6px;
+}
+.share-popup-item i {
+  font-size: 1.18rem;
+}
+.share-popup-item.whatsapp { color: #25D366; }
+.share-popup-item.telegram { color: #0088cc; }
+.share-popup-item.email { color: #ea4335; }
+.share-popup-item.copy { color: #6366f1; }
+.share-popup-item:hover {
+  background: linear-gradient(90deg, #e0e7ff 0%, #f8fafc 100%);
+  color: #23272f !important;
+  transform: scale(1.04) translateX(2px);
+  box-shadow: 0 2px 8px rgba(99,102,241,0.10);
+}
+
+/* Dashboard Dark Theme */
+.dashboard-dark {
+  background: linear-gradient(120deg, #181c24 0%, #23272f 100%) !important;
+  color: #e0e6f0 !important;
+}
+.dashboard-dark .view-header,
+.dashboard-dark .upload-form,
+.dashboard-dark .users-table,
+.dashboard-dark .settings-section,
+.dashboard-dark .data-usage-attractive-card,
+.dashboard-dark .document-card,
+.dashboard-dark .modal-content {
+  background: rgba(30,34,44,0.92) !important;
+  color: #e0e6f0 !important;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.18);
+  border-radius: 16px;
+}
+.dashboard-dark .document-card {
+  border: 1.5px solid #23272f !important;
+}
+.dashboard-dark .document-card:hover {
+  background: linear-gradient(135deg, #23272f 0%, #181c24 100%) !important;
+  border-color: #6366f1 !important;
+}
+.dashboard-dark .access-badge {
+  background: #23272f !important;
+  color: #fff !important;
+}
+.dashboard-dark .btn,
+.dashboard-dark button {
+  background: #23272f !important;
+  color: #e0e6f0 !important;
+  border: 1px solid #444 !important;
+}
+.dashboard-dark .btn-primary {
+  background: #6366f1 !important;
+  color: #fff !important;
+}
+.dashboard-dark .btn-danger {
+  background: #ef4444 !important;
+  color: #fff !important;
+}
+.dashboard-dark .btn-secondary {
+  background: #444 !important;
+  color: #e0e6f0 !important;
+}
+.dashboard-dark .table th,
+.dashboard-dark .table td {
+  background: #23272f !important;
+  color: #e0e6f0 !important;
+}
+.dashboard-dark .share-popup-menu {
+  background: rgba(30,34,44,0.97) !important;
+  color: #e0e6f0 !important;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.28);
+}
+.dashboard-dark .share-popup-arrow::after {
+  background: rgba(30,34,44,0.97) !important;
+}
+.dashboard-dark .share-popup-item:hover {
+  background: linear-gradient(90deg, #23272f 0%, #181c24 100%) !important;
+  color: #fff !important;
+}
+.dashboard-dark input,
+.dashboard-dark textarea,
+.dashboard-dark select {
+  background: #23272f !important;
+  color: #e0e6f0 !important;
+  border-color: #444 !important;
 }
